@@ -31,12 +31,10 @@ export function aufgabe01(args) {
 
     if (currentElement === "e") {
       // do nothing
-    }  else {
-
-
-
-    // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
-    result.push(currentElement)
+    } else {
+      // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
+      result.push(currentElement)
+    }
   }
 
   // Hier geben wir das Resultat zurück, und machen einen Text daraus.
@@ -44,3 +42,32 @@ export function aufgabe01(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe01]", aufgabe01)
+
+export function aufgabe02(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentLetter = input[i]
+
+    const currentUpperCaseLetter = currentLetter.toUpperCase()
+
+    result.push(currentUpperCaseLetter)
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
+
+export function aufgabe03(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      count = count + 1
+    }
+  }
+  return result.join("")
+}
+linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
