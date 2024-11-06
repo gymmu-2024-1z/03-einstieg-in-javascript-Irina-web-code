@@ -90,6 +90,62 @@ export function aufgabe04(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
+export function aufgabe05(args) {
+  const input = args
+  const result = []
+  let count = 0
+  // Zähle alle Grossbuchstaben im Text
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Wenn es ein sonderzeichen ist, dann mache nichts
+    if (currentElement === " ") {
+      // ignorieren
+      // ignoriere auch punkte
+    } else if (currentElement === ".") {
+      // ignorieren
+    } else if (currentElement === currentElement.toUpperCase()) {
+      count = count + 1
+    }
+  }
+  return count
+}
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  let count = 0
+  // Zähle alle Sonderzeichen im Text
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Zähle alle Sonderzeichen im Text
+    if (currentElement === " ") {
+      // Zähle das current Element
+      count = count + 1
+    } else if (currentElement === ".") {
+      // Zähle das current Element
+      count = count + 1
+    }
+  }
+  return count
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
+
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    // Finde heraus, ob sich im Text das Wort und befindet sich an der Stelle i
+    if (input[i] === "u" && input[i + 1] === "n" && input[i + 2] === "d") {
+      count = count + 1
+    }
+  }
+  return count
+}
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
 export function aufgabe08(args) {
   const input = args
   const result = []
@@ -105,3 +161,84 @@ export function aufgabe08(args) {
   return result.join("")
 }
 linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe09(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Teste, ob eine Eingabe genau sech Zeichen lang ist
+    if (input.length === 6) {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
+
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Teste, ob die Eingabe ein korrekter RGB Hexcode ist
+    if (input[i] === "#") {
+      return true
+    } else {
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
+
+export function aufgabe11(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {}
+}
+linkupExerciseHandler("[data-click=aufgabe11]", aufgabe11)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Suche die Position des ersten es in einem Text
+    if (input[i] === "e" || input[i] === "E") {
+      return i
+    } else {
+      return -1
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe13(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Suche die Position des letzten e's in einem Text
+    if (input[i] === "e") {
+      return i
+    } else {
+      return -1
+    }
+    if (input[i] === "e" || input[i] === "E") {
+      return i
+    } else {
+      return -1
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
+
+export function aufgabe14(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {}
+  // finde das dritte e im Text
+}
