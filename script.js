@@ -241,4 +241,6 @@ export function aufgabe14(args) {
 
   for (let i = 0; i < input.length; i++) {}
   // finde das dritte e im Text
+  return input[2] === "e" || input[2] === "E" ? 2 : -1 // -1 ist der Fall, dass das dritte e nicht gefunden wurde
 }
+linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
