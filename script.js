@@ -269,6 +269,12 @@ export function aufgabe15(args) {
   const input = args
   const result = []
 
-  for (let i = 0; i < input.length; i++) {}
+  for (let i = 0; i < input.length; i++) {
+    // Wenn du ein Leerzeichen findest
+    if (input[i] === " ") {
+      // gib die Funktion zurück
+      return true
+    }
+  }
 }
 linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
