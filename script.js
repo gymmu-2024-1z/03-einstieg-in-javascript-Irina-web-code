@@ -204,14 +204,21 @@ export function aufgabe12(args) {
   const input = args
   const result = []
 
+  // erstelle eine Variable um die Position des es zu speichern
+  let position = -1
+
   for (let i = 0; i < input.length; i++) {
-    // Suche die Position des ersten es in einem Text
-    if (input[i] === "e" || input[i] === "E") {
-      return i
-    } else {
-      return -1
+    const currentElement = input[i]
+    // Wenn du ein e findest
+    if (currentElement === "e") {
+      // speichere die Position des e's
+      position = i
+      // breche ab
+      break
     }
   }
+
+  return position
 }
 linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
 
@@ -219,19 +226,18 @@ export function aufgabe13(args) {
   const input = args
   const result = []
 
+  let position = -1
+
   for (let i = 0; i < input.length; i++) {
-    // Suche die Position des letzten e's in einem Text
-    if (input[i] === "e") {
-      return i
-    } else {
-      return -1
-    }
-    if (input[i] === "e" || input[i] === "E") {
-      return i
-    } else {
-      return -1
+    const currentElement = input[i]
+    // Wenn du ein e findest
+    if (currentElement === "e") {
+      // speichere die Position des e's
+      position = i
     }
   }
+
+  return position
 }
 linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
 
@@ -239,8 +245,30 @@ export function aufgabe14(args) {
   const input = args
   const result = []
 
-  for (let i = 0; i < input.length; i++) {}
-  // finde das dritte e im Text
-  return input[2] === "e" || input[2] === "E" ? 2 : -1 // -1 ist der Fall, dass das dritte e nicht gefunden wurde
+  let pos = -1
+  let eCount = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn du ein e siehst dann zähle eins hoch
+    if (currentElement === "e") {
+      eCount = eCount + 1
+    }
+
+    // Wenn eCount genau gleich 3 ist, dann speichere die Position
+    if (eCount === 3) {
+      pos = i
+    }
+  }
+  return pos
 }
 linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
+
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {}
+}
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
