@@ -252,7 +252,7 @@ export function aufgabe14(args) {
     const currentElement = input[i]
 
     // Wenn du ein e siehst dann zähle eins hoch
-    if (currentElement === "e") {
+    if (currentElement === "e" || currentElement === "E") {
       eCount = eCount + 1
     }
 
@@ -269,12 +269,56 @@ export function aufgabe15(args) {
   const input = args
   const result = []
 
+  let position = -1
+
   for (let i = 0; i < input.length; i++) {
     // Wenn du ein Leerzeichen findest
     if (input[i] === " ") {
-      // gib die Funktion zurück
-      return true
+      // speichere die Position
+      result.push(i)
+      position = i
+      // breche ab
+      break
     }
   }
+  return position
 }
 linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
+
+export function aufgabe16(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable um zwei Teile einer Liste zu speichen
+  let firstPart = []
+  let secondPart = []
+  let dollarfound = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn kein Dollarzeichen gefunden wurde, dann hänge an den ersten Teil an
+    if (dollarfound === false) {
+      firstPart.push(currentElement)
+    } else {
+      secondPart.push(currentElement)
+    }
+
+    // Wenn du ein Dollarzeichen findest
+    if (currentElement === "$") {
+      // setze dollarfound auf true
+      dollarfound = true
+    }
+  }
+  // Gib das Resultat zurück
+  return [firstPart.join(""), secondPart.join("")]
+}
+linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
+
+export function aufgabe17(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {}
+}
+linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
