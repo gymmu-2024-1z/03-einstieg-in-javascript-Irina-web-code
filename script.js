@@ -29,7 +29,7 @@ export function aufgabe01(args) {
     // damit wir nicht so viele Klammern schreiben müssen.
     const currentElement = input[i]
 
-    if (currentElement === "e") {
+    if (currentElement === "e" || currentElement === "E") {
       // do nothing
     } else {
       // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
@@ -325,8 +325,42 @@ export function aufgabe17(args) {
   for (let i = 0; i < input.length; i++) {
     // Lies die eingabe als Liste ein
     list = input.split(",")
+    // Trenne die Einträge in der Liste mit einem Komma
+    list = list.join(",").split(",")
   }
   // Gib die Liste zuruck
   return list[list.join(",")]
 }
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
+
+export function aufgabe18(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable um eine eingabe zu definieren
+  let output = ""
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die eingabe "name" ein
+    const name = input[i]
+    // Ersetze die Eingabe mit "Irina"
+    input[i] = "Irina"
+    // Gib die Ausgabe aus
+    output = output + " " + name
+    // Gib die Ausgabe zurück
+    return output
+
+    // Lies die eingabe "alter" ein
+    const alter = input[i]
+    // Ersetze die Eingabe mit "15"
+    input[i] = "15"
+    // Gib die Ausgabe aus
+    output = output + " " + alter
+    // Gib die Ausgabe zuruck
+    return output
+  }
+
+  // Gib die Ausgabe zuruck
+  return output
+}
+linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
