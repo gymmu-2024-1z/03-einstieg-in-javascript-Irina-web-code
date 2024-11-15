@@ -319,6 +319,14 @@ export function aufgabe17(args) {
   const input = args
   const result = []
 
-  for (let i = 0; i < input.length; i++) {}
+  // erstelle eine Variable für eine Liste
+  let list = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die eingabe als Liste ein
+    list = input.split(",")
+  }
+  // Gib die Liste zuruck
+  return list[list.join(",")]
 }
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
