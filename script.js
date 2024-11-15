@@ -340,7 +340,8 @@ export function aufgabe18(args) {
   // erstelle eine Variable um eine eingabe zu definieren
   let output = ""
 
-  for (let i = 0; i < input.length; i++) {
+  for (let i = input.length - 1; i >= 0; i--) {
+    // Das gleiche machen wie bei aufgabe 1
     // Lies die eingabe "name" ein
     const name = input[i]
     // Ersetze die Eingabe mit "Irina"
@@ -364,3 +365,10 @@ export function aufgabe18(args) {
   return output
 }
 linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
+
+export function aufgabe19(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {}
+}
