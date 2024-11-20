@@ -370,5 +370,47 @@ export function aufgabe19(args) {
   const input = args
   const result = []
 
-  for (let i = 0; i < input.length; i++) {}
+  // erstelle eine Variable, um current Element als alles was in input steht zu definieren
+  let currentElement = " "
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies jedes Zeichen ein
+    currentElement = input[i]
+    // Wenn du ein Zeichen findest
+    if (currentElement === " ") {
+      // verdopple das Zeichen
+      currentElement = currentElement + currentElement
+    }
+  }
+  // gib die Ausgabe zurück
+  return currentElement
 }
+
+linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+
+  // Erstelle eine Variable um current element als Leerschlag zu definieren
+  let currentElement = " "
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die eingabe ein
+    currentElement = input[i]
+    // Wenn du ein Leerzeichen findest
+    if (currentElement === " ") {
+      // Prüfe, ob das nächste Zeichen ein Punkt ist
+      if (input[i + 1] === ".") {
+        // Wenn ja, gib es als richtig zurück
+        return true
+      }
+      // Wenn nein, gib es als falsch zurück
+      else {
+        return false
+      }
+    }
+  }
+}
+
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
