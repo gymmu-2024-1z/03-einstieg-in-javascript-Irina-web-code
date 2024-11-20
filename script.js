@@ -333,57 +333,21 @@ export function aufgabe17(args) {
 }
 linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
 
-export function aufgabe18(args) {
-  const input = args
-  const result = []
-
-  // erstelle eine Variable um eine eingabe zu definieren
-  let output = ""
-
-  for (let i = input.length - 1; i >= 0; i--) {
-    // Das gleiche machen wie bei aufgabe 1
-    // Lies die eingabe "name" ein
-    const name = input[i]
-    // Ersetze die Eingabe mit "Irina"
-    input[i] = "Irina"
-    // Gib die Ausgabe aus
-    output = output + " " + name
-    // Gib die Ausgabe zurück
-    return output
-
-    // Lies die eingabe "alter" ein
-    const alter = input[i]
-    // Ersetze die Eingabe mit "15"
-    input[i] = "15"
-    // Gib die Ausgabe aus
-    output = output + " " + alter
-    // Gib die Ausgabe zuruck
-    return output
-  }
-
-  // Gib die Ausgabe zuruck
-  return output
-}
-linkupExerciseHandler("[data-click=aufgabe18]", aufgabe18)
-
 export function aufgabe19(args) {
   const input = args
   const result = []
 
   // erstelle eine Variable, um current Element als alles was in input steht zu definieren
-  let currentElement = " "
 
   for (let i = 0; i < input.length; i++) {
     // Lies jedes Zeichen ein
-    currentElement = input[i]
+    const currentElement = input[i]
     // Wenn du ein Zeichen findest
-    if (currentElement === " ") {
-      // verdopple das Zeichen
-      currentElement = currentElement + currentElement
-    }
+    result.push(currentElement)
+    result.push(currentElement)
   }
   // gib die Ausgabe zurück
-  return currentElement
+  return result.join("")
 }
 
 linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
@@ -399,11 +363,11 @@ export function aufgabe20(args) {
     // Lies die eingabe ein
     currentElement = input[i]
     // Wenn du ein Leerzeichen findest
-    if (currentElement === " ") {
+    if (currentElement === ".") {
       // Prüfe, ob das nächste Zeichen ein Punkt ist
-      if (input[i + 1] === ".") {
+      if (input[i + 1] === " ") {
         // Wenn ja, gib es als richtig zurück
-        return true
+        //return true
       }
       // Wenn nein, gib es als falsch zurück
       else {
@@ -411,6 +375,100 @@ export function aufgabe20(args) {
       }
     }
   }
+  return true
 }
 
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+
+  // Definiere die Eingabe als ein Element
+  let currentElement = ""
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die Eingabe von hinten ein
+    currentElement = input[input.length - i - 1]
+    // Gib die Eingabe so zurück, wie du sie eingelesen hast
+    result.push(currentElement)
+  }
+
+  return result
+}
+
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die Eingabe ein
+    const currentElement = input[i]
+    // Ersetze jedes Zeichen mit einem Underscore
+    result.push("_")
+
+    // Tu das, bis du ein k findest
+    if (currentElement === "k" || currentElement === "K") {
+      break
+    }
+  }
+
+  return result
+}
+
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe23(args) {
+  const input = args
+  const result = []
+
+  // Erstelle eine Variable um das erste Zeichen der eingabe als current element zu definieren
+  let currentElement = ""
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die eingabe ein
+    currentElement = input[i]
+    // Nimm das erste Zeichen der eingabe
+    result.push(currentElement)
+    // Setze das erste Zeichen vor dem ersten Zeichen ein
+    if (i === 0) {
+      result.push(currentElement)
+    }
+    // Setze das erste Zeichen hinter dem letzten Zeichen ein
+    if (i === input.length - 1) {
+      result.push(currentElement)
+    }
+  }
+
+  return result
+}
+
+linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
+
+export function aufgabe27(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable die Eingabe als ein Element zu definieren
+  let currentElement = ""
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die Eingabe ein
+    currentElement = input[i]
+    // Prüfe, ob die Eingabe eine Zahl ist
+    if (currentElement >= 0 && currentElement <= 9) {
+      // Gib die Eingabe als richtig zurück
+      return true
+    }
+    // Wenn die eingabe keine Zahl ist, dann gib es als falsch zurück
+    else {
+      return false
+    }
+  }
+
+  return result
+}
+
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
