@@ -338,6 +338,7 @@ export function aufgabe19(args) {
   const result = []
 
   // erstelle eine Variable, um current Element als alles was in input steht zu definieren
+  let currentElement = input
 
   for (let i = 0; i < input.length; i++) {
     // Lies jedes Zeichen ein
