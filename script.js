@@ -425,24 +425,17 @@ export function aufgabe23(args) {
   const input = args
   const result = []
 
-  // Erstelle eine Variable um das erste Zeichen der eingabe als current element zu definieren
-  let currentElement = ""
+  // erstelle eine Variable für das erste Zeichen
+  const firstLetter = input[0]
+
+  result.push(firstLetter)
 
   for (let i = 0; i < input.length; i++) {
     // Lies die eingabe ein
     currentElement = input[i]
-    // Nimm das erste Zeichen der eingabe
-    result.push(currentElement)
-    // Setze das erste Zeichen vor dem ersten Zeichen ein
-    if (i === 0) {
-      result.push(currentElement)
-    }
-    // Setze das erste Zeichen hinter dem letzten Zeichen ein
-    if (i === input.length - 1) {
-      result.push(currentElement)
-    }
   }
-
+  // setze das erste Zeichen ein
+  result.push(firstLetter)
   return result
 }
 
@@ -450,14 +443,19 @@ linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
 
 export function aufgabe27(args) {
   const input = args
-  const result = []
+  const result = [1, 3, "w"]
 
-  // erstelle eine Variable die Eingabe als ein Element zu definieren
-  let currentElement = ""
+  const firstLetter = input[0]
+  const secondLetter = input[1]
+
+  const lastLetter = input[input.length - 1]
+  const secondLastLetter = input[input.length - 2]
+
+  result.push(firstLetter)
 
   for (let i = 0; i < input.length; i++) {
     // Lies die Eingabe ein
-    currentElement = input[i]
+    const currentElement = input[i]
     // Prüfe, ob die Eingabe eine Zahl ist
     if (currentElement >= 0 && currentElement <= 9) {
       // Gib die Eingabe als richtig zurück
@@ -468,6 +466,8 @@ export function aufgabe27(args) {
       return false
     }
   }
+
+  result.push(secondLetter)
 
   return result
 }
