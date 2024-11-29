@@ -473,3 +473,27 @@ export function aufgabe27(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
+export function Sortierverfahren1(args) {
+  const text = "Bitte sortiere mich!"
+  const list = text.split("") // Hier wird der Text zu einer Liste gemacht, sodass wir dann diese Liste sortieren können
+  for (
+    let i = 0;
+    i < list.length;
+    i++ // Hier sieht man, dass der Input i auf der Position liegt und jeder weitere Input i+1 ist, so lange, wie die Liste
+  ) {
+    const currentElement = list[i] // Das konstante Element ist die Liste auf der Position i
+    const nextElement = list[i + 1] // Das nächste Element in der Liste muss immer einse Position mehr haben, als das vorherige deshalb ist es + eine Position mehr als i
+    if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      const tmp = list[i + 1]
+      list[i + 1] = list[i]
+      list[i] = tmp
+      i = -1 // Hier muss er nocheinmal von vorne überprüfen, ob die Liste jetzt richtig sortiert ist
+    }
+  }
+  const result = list.join("")
+  console.log(result)
+  return result
+}
+
+linkupExerciseHandler("[data-click=Sortierverfahren1]", Sortierverfahren1)
