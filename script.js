@@ -29,8 +29,12 @@ export function aufgabe01(args) {
     // damit wir nicht so viele Klammern schreiben müssen.
     const currentElement = input[i]
 
-    // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
-    result.push(currentElement)
+    if (currentElement === "e" || currentElement === "E") {
+      // do nothing
+    } else {
+      // Hier wird das aktuelle Zeichen ans Ende der Resultat-Liste angehängt.
+      result.push(currentElement)
+    }
   }
 
   // Hier geben wir das Resultat zurück, und machen einen Text daraus.
@@ -38,3 +42,470 @@ export function aufgabe01(args) {
 }
 
 linkupExerciseHandler("[data-click=aufgabe01]", aufgabe01)
+
+export function aufgabe02(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    const currentLetter = input[i]
+    // unser konstanter aktueller Buchstabe/Element ist auf der Liste auf Position i
+
+    const currentUpperCaseLetter = currentLetter.toUpperCase() // Hier wird das aktuelle Element bzw. der aktuelle Buchstabe in einen Grossbuchstaben umgewandelt
+
+    result.push(currentUpperCaseLetter) // Im Resultat muss ein Grossbuchstabe ausgegeben werden
+  }
+  return result.join("") // Das Resultat wird zurückgegeben und daraus wird noch ein Text gemacht, weil sonst alles von Kommas getrennt wird
+}
+linkupExerciseHandler("[data-click=aufgabe02]", aufgabe02)
+
+export function aufgabe03(args) {
+  const input = args
+  const result = [] //Unser Resultat ist nun noch eine leere Liste
+  let count = 0 // Weil wir in dieser Aufgabe etwas zählen müssen, muss der Count auf Null gesetzt werden, da wir hier noch nichts gezählt haben
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === "e") {
+      // Hier wird gefragt, ob das aktuelle Element ein e ist
+      count = count + 1 // Wenn ja, dann wird der Count um 1 erhöht
+    } else if (currentElement === "E") {
+      // Wenn das aktuelle Element ein E (Grossbuchstabe) ist, dann wird der Count ebenfalls um 1 erhöht
+      count++
+    }
+  }
+  return count // Wenn die ganze Liste durchgegangen wurde, wird der Count zurückgegeben
+}
+linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
+
+export function aufgabe04(args) {
+  const input = args
+  const result = []
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    if (currentElement === " ") {
+      // Hier wird gezählt, ob das aktuelle Element ein Leerzeichen ist, wenn ja, wird der Count um eins erhöht
+      count = count + 1
+    }
+  }
+  return count + 1 // Weil wir alle Wörter in einem Text zählen wollen, müssen wir beim Count noch um 1 erhöhen, weil es immer ein Leerzeichen weniger hat als wörter
+}
+linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
+
+export function aufgabe05(args) {
+  const input = args
+  const result = []
+  let count = 0
+  // Zähle alle Grossbuchstaben im Text
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Wenn es ein sonderzeichen ist, dann mache nichts
+    if (currentElement === " ") {
+      // ignorieren
+      // ignoriere auch punkte
+    } else if (currentElement === ".") {
+      // ignorieren
+    } else if (currentElement === currentElement.toUpperCase()) {
+      count = count + 1 // Alle Grossbuchstaben werdem im Text gezählt
+    }
+  }
+  return count
+}
+linkupExerciseHandler("[data-click=aufgabe05]", aufgabe05)
+
+export function aufgabe06(args) {
+  const input = args
+  const result = []
+  let count = 0
+  // Zähle alle Sonderzeichen im Text
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Zähle alle Sonderzeichen im Text
+    if (currentElement === " ") {
+      // Zähle das current Element
+      count = count + 1
+    } else if (currentElement === ".") {
+      // Zähle das current Element
+      count = count + 1
+    }
+    // Hier sehen wir in der Aufgabe, dass alle Leerzeichen und Punkte gezählt werden. Wenn wir noch andere Zeichen zählen wollen würden, müssten wir dafür noch einen Befehl geben.
+  }
+  return count
+}
+linkupExerciseHandler("[data-click=aufgabe06]", aufgabe06)
+
+export function aufgabe07(args) {
+  const input = args
+  const result = []
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    // Finde heraus, ob sich im Text das Wort und befindet an der Stelle i
+    if (input[i] === "u" && input[i + 1] === "n" && input[i + 2] === "d") {
+      // Hier machen wir einen Befehl für ein Wort, das heisst, dass wir nur hochzählen, wenn diese drei Buchstaben hintereinander im Text stehen bzw wenn nach dem u zuerste ein n und dann ein d steht
+      count = count + 1
+    }
+  }
+  return count
+}
+linkupExerciseHandler("[data-click=aufgabe07]", aufgabe07)
+
+export function aufgabe08(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    let currentElement = input[i]
+    if (currentElement === "e") {
+      // Hier wird getestet, ob das aktuelle Element ein e ist
+      currentElement = 3 // Hier wird das aktuelle Element e auf 3 umgewandelt
+    }
+    result.push(currentElement) // Das umgewandelte Element (nun 3) wird ins Resultat gestossen
+  }
+
+  return result.join("") // Das Resultat wird zurückgegeben und zum Text gemacht
+}
+linkupExerciseHandler("[data-click=aufgabe08]", aufgabe08)
+
+export function aufgabe09(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Teste, ob eine Eingabe genau sechs Zeichen lang ist
+    if (input.length === 6) {
+      // Wenn die Länge der Eingabe genau sechs Zeichen, nicht mehr und nicht weniger hat, dann wird das Resultat true also richtig zurückgegeben
+      return true
+    } else {
+      // Wenn es mehr oder weniger als sechs Zeichen hat, dann wird das Resultat false also falsch zurueckgegeben
+      return false
+    }
+  }
+}
+linkupExerciseHandler("[data-click=aufgabe09]", aufgabe09)
+
+export function aufgabe10(args) {
+  const input = args
+  const result = []
+  if (input.length !== 7) {
+    // Hier prüfen wir zuerst, ob die Eingabe sieben Zeichen lang ist, weil ein Hexcode ein hashtag und sechs andere Zeichen hat
+    return false
+  }
+  if (input[0] !== "#") {
+    // Hier wird geprüft, ob das erste Zeichen und nur das erste zeichen kein Hashtag ist und wenn es keines ist, dann wird das Resultat falsch zurückgegeben
+    // das Ausrufezeichen steht hier für ungleich
+    return false
+  }
+
+  for (
+    let i = 1; // Hier müssen wir erst ab der Position eins beginnen zu zählen, weil das erste Zeichen, das ein Hashtag sein muss, anders behandelt wird und nicht von diesem Befehl geprüft wird
+    i < input.length;
+    i++
+  ) {
+    // Teste, ob die Eingabe ein korrekter RGB Hexcode ist
+    const currentElement = input[i]
+    const asciiCode = currentElement.charCodeAt(0) // Hier machen wir den Befehl, dass die Aufgabe den Ascii code verwenden soll, der den Zeichen bestimmte Nummern gibt
+    if (
+      (asciiCode >= 48 && asciiCode <= 57) ||
+      (asciiCode >= 65 && asciiCode <= 70)
+    ) {
+      // Hier soll getestet werden, ob das Zeichen in der Eingabe eine Zahl zwischen 0 und 9 oder ein Buchstaben von A bis F ist, hier ist es mit den Ascii Nummern beschrieben, die in der Tabelle diese Zeichen definieren
+    } else {
+      return false
+    }
+  }
+  return true
+}
+linkupExerciseHandler("[data-click=aufgabe10]", aufgabe10)
+
+export function aufgabe12(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable um die Position des es zu speichern
+  let position = -1
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Wenn du ein e findest
+    if (currentElement === "e") {
+      // speichere die Position des e's
+      position = i
+      // breche ab
+      break
+    }
+  }
+
+  return position
+}
+linkupExerciseHandler("[data-click=aufgabe12]", aufgabe12)
+
+export function aufgabe13(args) {
+  const input = args
+  const result = []
+
+  let position = -1
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    // Wenn du ein e findest
+    if (currentElement === "e") {
+      // speichere die Position des e's
+      position = i
+    } // Hier wird die ganze Liste lang getestet, ob das aktuelle Element ein e ist und immer wenn ein neues e dazugekommen ist, wurde dessen Position gespeichert. Wenn die ganze Eingabe also durchgelesen wurde, haben wir immer noch die Position des letzten e's gespeichert und die wird dann zurückgegeben.
+  }
+
+  return position
+}
+linkupExerciseHandler("[data-click=aufgabe13]", aufgabe13)
+
+export function aufgabe14(args) {
+  const input = args
+  const result = []
+
+  let pos = -1 // Hier steht ein minus eins, damit, wenn wir kein e finden, dass das Ergebnis dann -1 ist und dadurch wissen wir dann, dass ein e gefunden wurde // Beeinflusst aber nicht das Ergebnis bzw dessen Position
+  let eCount = 0
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn du ein e siehst dann zähle eins hoch
+    if (currentElement === "e" || currentElement === "E") {
+      // Um die Position des dritten e's zu finden, müssen wir jedes Mal eins hochzählen, wenn ein e gefunden wird
+      eCount = eCount + 1
+    }
+
+    // Wenn eCount genau gleich 3 ist, dann speichere die Position
+    if (eCount === 3) {
+      pos = i
+    }
+  }
+  return pos
+}
+linkupExerciseHandler("[data-click=aufgabe14]", aufgabe14)
+
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+
+  let position = -1
+
+  for (let i = 0; i < input.length; i++) {
+    // Wenn du ein Leerzeichen findest
+    if (input[i] === " ") {
+      // speichere die Position, damit wir wissen, wie lange die Eingabe bis zu der Stelle des Leerzeichens ist
+      result.push(i)
+      position = i
+      // breche ab
+      break
+    }
+  }
+  return position
+}
+linkupExerciseHandler("[data-click=aufgabe15]", aufgabe15)
+
+export function aufgabe16(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable um zwei Teile einer Liste zu speichen
+  // Wir haben hier zwei leere Listen erstellt bzw zwei leere Teile einer Liste
+  let firstPart = []
+  let secondPart = []
+  let dollarfound = false
+
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+
+    // Wenn kein Dollarzeichen gefunden wurde, dann hänge an den ersten Teil an
+    if (dollarfound === false) {
+      //
+      firstPart.push(currentElement)
+    } else {
+      // Wenn aber ein Dollarzeichen gefunden wurde, dann hänge alles was danach kommt an den zweiten Teil der Liste
+      secondPart.push(currentElement)
+    }
+
+    // Wenn du ein Dollarzeichen findest
+    if (currentElement === "$") {
+      // setze dollarfound auf true
+      dollarfound = true
+      // Hier müssen wir noch einstellen, dass wenn man ein Dollarzeichen gefunden hat, dass dollarfound dann richtig ist, damit der obere Teil der Aufgabe funktioniert, weil alles was auf dollarfounnd = true steht, dann im zweiten Teil der Liste stehen wird
+    }
+  }
+  // Gib das Resultat zurück und mache aus beiden Teilen der Liste einen Text
+  return [firstPart.join(""), secondPart.join("")]
+}
+linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
+
+export function aufgabe17(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable für eine Liste
+  let list = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die eingabe als Liste ein
+    list = input.split(",")
+    // Trenne die Einträge in der Liste mit einem Komma
+    list = list.join(",").split(",")
+  }
+  // Gib die Liste zuruck
+  return list[list.join(",")]
+}
+linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
+
+export function aufgabe19(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable, um current Element als alles was in input steht zu definieren
+  let currentElement = input
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies jedes Zeichen ein
+    const currentElement = input[i]
+    // Wenn du ein Zeichen findest
+    result.push(currentElement)
+    result.push(currentElement)
+    // Hier wird das gefundene Zeichen einfach doppelt zurückgegeben
+  }
+  // gib die Ausgabe zurück
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe19]", aufgabe19)
+
+export function aufgabe20(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die eingabe ein
+    currentElement = input[i]
+    // Wenn du einen Punkt findest
+    if (currentElement === ".") {
+      // Prüfe, ob das nächste Zeichen nach dem Punkt ein Leerzeichen ist
+      if (input[i + 1] === " ") {
+        // Wenn ja, gib es als richtig zurück
+        return true
+      }
+      // Wenn nein, gib es als falsch zurück
+      else {
+        return false
+      }
+    }
+  }
+  return true
+}
+
+linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
+
+linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
+
+export function aufgabe22(args) {
+  const input = args
+  const result = []
+
+  kfound = false
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die Eingabe ein
+    const currentElement = input[i]
+    // Ersetze jedes Zeichen mit einem Underscore
+    if kfound = false {
+      result.push("_")
+    }
+
+
+    // Tu das, bis du ein k findest
+    if (currentElement === "k" || currentElement === "K") {
+      // setze kfound auf true
+      kfound = true
+    }
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=aufgabe22]", aufgabe22)
+
+export function aufgabe23(args) {
+  const input = args
+  const result = []
+
+  // erstelle eine Variable für das erste Zeichen
+  const firstLetter = input[0]
+
+  result.push(firstLetter)
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die eingabe ein
+    currentElement = input[i]
+  }
+  // setze das erste Zeichen ein
+  result.push(firstLetter)
+  return result
+}
+
+linkupExerciseHandler("[data-click=aufgabe23]", aufgabe23)
+
+export function aufgabe27(args) {
+  const input = args
+  const result = [1, 3, "w"]
+
+  const firstLetter = input[0]
+  const secondLetter = input[1]
+
+  const lastLetter = input[input.length - 1]
+  const secondLastLetter = input[input.length - 2]
+
+  result.push(firstLetter)
+
+  for (let i = 0; i < input.length; i++) {
+    // Lies die Eingabe ein
+    const currentElement = input[i]
+    // Prüfe, ob die Eingabe eine Zahl ist
+    if (currentElement >= 0 && currentElement <= 9) {
+      // Gib die Eingabe als richtig zurück
+      return true
+    }
+    // Wenn die eingabe keine Zahl ist, dann gib es als falsch zurück
+    else {
+      return false
+    }
+  }
+
+  result.push(secondLetter)
+
+  return result
+}
+
+linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
+
+export function Sortierverfahren1(args) {
+  const text = "Bitte sortiere mich"
+  const list = text.split("") // Hier wird der Text zu einer Liste gemacht, sodass wir dann diese Liste sortieren können
+  for (
+    let i = 0;
+    i < list.length;
+    i++ // Hier sieht man, dass der Input i auf der Position liegt und jeder weitere Input i+1 ist, so lange, wie die Liste
+  ) {
+    const currentElement = list[i] // Das konstante Element ist die Liste auf der Position i
+    const nextElement = list[i + 1] // Das nächste Element in der Liste muss immer einse Position mehr haben, als das vorherige deshalb ist es + eine Position mehr als i
+    if (currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+      const tmp = list[i + 1]
+      list[i + 1] = list[i]
+      list[i] = tmp
+      i = -1 // Hier muss er nocheinmal von vorne überprüfen, ob die Liste jetzt richtig sortiert ist
+    }
+  }
+  const result = list.join("")
+  console.log(result)
+  return result
+}
+
+linkupExerciseHandler("[data-click=Sortierverfahren1]", Sortierverfahren1)
