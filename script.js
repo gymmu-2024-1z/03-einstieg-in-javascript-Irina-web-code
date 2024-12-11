@@ -524,11 +524,7 @@ export function Eisen(args) {
   let count = 0
 
   for (let i = 0; i < input.length; i++) {
-    if (
-      input[i] === "f" ||
-      (input[i] === "F" && input[i + 1] === "e") ||
-      input[i + 1] === "E"
-    ) {
+    if (input[i] === "f" && input[i + 1] === "e") {
       count = count + 1
     }
   }
