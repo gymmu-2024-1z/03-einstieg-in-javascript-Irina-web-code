@@ -1,4 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/SYYUWTQg)
+
 # Einstieg ins Programmieren mit Javascript
 
 Dieses Projekt bietet viele Aufgaben mit automatischen Tests, bei denen Sie das
@@ -149,3 +150,20 @@ Testen sie, ob eine Eingabe eine Zahl ist.
 
 Testen Sie, ob in der Eingabe 2 Zahlen von einem Leerzeichen getrennt sind.
 Falls ja geben Sie die Summe als Ausgabe aus; sonst Fehlermeldung.
+
+## Eisen
+
+Zähle, wie oft die beiden Buchstaben fe Text nebeneinanderstehen.
+
+## Wasser
+
+Finde im Text zwei nebeneinanderstehende h's und ersetze sie mit einem o
+
+## Ammoniak
+
+Setze vor jedes h ein n und verdreifache das n
+
+## Zink
+
+Wenn man das Wort zink findet setze das i vor das z und das n nach das k sodass
+izkn entsteht.

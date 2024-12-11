@@ -521,10 +521,11 @@ linkupExerciseHandler("[data-click=Sortierverfahren1]", Sortierverfahren1)
 export function Eisen(args) {
   const input = args
   const result = []
-  let count = 0
+  let count = 0 // Hier setzen wir den Zähler auf null, damit das Ergebnis nicht verfälscht wird
 
   for (let i = 0; i < input.length; i++) {
     if (input[i] === "f" && input[i + 1] === "e") {
+      // Hier schauen, ob die eingabe ein f und danach ein e ist, wenn das stimmt wird beim Zähler um eins erhöht
       count = count + 1
     }
   }
@@ -533,3 +534,41 @@ export function Eisen(args) {
 }
 
 linkupExerciseHandler("[data-click=Eisen]", Eisen)
+
+export function Wasser(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === "h" && input[i + 1] === "h") {
+      result.push("o")
+      i = i + 1
+    } else {
+      result.push(input[i])
+    }
+  }
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=Wasser]", Wasser)
+
+export function Ammoniak(args) {
+  const input = args
+  const result = []
+  const lettern = "n"
+
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === "h") {
+      result.push(lettern)
+      result.push(input[i])
+      result.push(input[i])
+      result.push(input[i])
+    } else {
+      result.push(input[i])
+    }
+  }
+
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=Ammoniak]", Ammoniak)
