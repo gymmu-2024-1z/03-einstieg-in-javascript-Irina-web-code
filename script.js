@@ -404,8 +404,6 @@ export function aufgabe20(args) {
 
 linkupExerciseHandler("[data-click=aufgabe20]", aufgabe20)
 
-linkupExerciseHandler("[data-click=aufgabe21]", aufgabe21)
-
 export function aufgabe22(args) {
   const input = args
   const result = []
@@ -415,16 +413,26 @@ export function aufgabe22(args) {
   for (let i = 0; i < input.length; i++) {
     // Lies die Eingabe ein
     const currentElement = input[i]
-    // Ersetze jedes Zeichen mit einem Underscore
-    if kfound = false {
-      result.push("_")
-    }
 
-
-    // Tu das, bis du ein k findest
     if (currentElement === "k" || currentElement === "K") {
       // setze kfound auf true
       kfound = true
+
+      // Ersetze jedes Zeichen mit einem Underscore
+      if (kfound === false) {
+        result.push("_")
+      }
+      // Tu das, bis du ein k findest
+      if (currentElement === "k" || currentElement === "K") {
+        // setze kfound auf true
+        kfound = true
+      }
+
+      // Jetzt muss man noch sagen, was passiert, wenn kfound auf true ist
+      if (kfound === true) {
+        // Das Zeichen so zurückgeben, wie es vorher schon stand
+        result.push(currentElement)
+      }
     }
   }
 
@@ -487,11 +495,11 @@ export function aufgabe27(args) {
 linkupExerciseHandler("[data-click=aufgabe27]", aufgabe27)
 
 export function Sortierverfahren1(args) {
-  const text = "Bitte sortiere mich"
+  const text = args
   const list = text.split("") // Hier wird der Text zu einer Liste gemacht, sodass wir dann diese Liste sortieren können
   for (
     let i = 0;
-    i < list.length;
+    i < list.length - 1;
     i++ // Hier sieht man, dass der Input i auf der Position liegt und jeder weitere Input i+1 ist, so lange, wie die Liste
   ) {
     const currentElement = list[i] // Das konstante Element ist die Liste auf der Position i
@@ -509,3 +517,23 @@ export function Sortierverfahren1(args) {
 }
 
 linkupExerciseHandler("[data-click=Sortierverfahren1]", Sortierverfahren1)
+
+export function Eisen(args) {
+  const input = args
+  const result = []
+  let count = 0
+
+  for (let i = 0; i < input.length; i++) {
+    if (
+      input[i] === "f" ||
+      (input[i] === "F" && input[i + 1] === "e") ||
+      input[i + 1] === "E"
+    ) {
+      count = count + 1
+    }
+  }
+
+  return count
+}
+
+linkupExerciseHandler("[data-click=Eisen]", Eisen)
