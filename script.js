@@ -81,16 +81,48 @@ linkupExerciseHandler("[data-click=aufgabe03]", aufgabe03)
 export function aufgabe04(args) {
   const input = args
   const result = []
-  let count = 0
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
-    if (currentElement === " ") {
-      // Hier wird gezählt, ob das aktuelle Element ein Leerzeichen ist, wenn ja, wird der Count um eins erhöht
-      count = count + 1
+    const ascii = currentElement.charCodeAt(0)
+    // Der charCode gibt immer den ascii wert von einem Zeichen zurück
+
+    if (ascii >= 65 && ascii <= 90) {
+      // Das sind die Ascii Werte von Grossbuchstaben und hier prüft man, ob die Eingabe einer von denen ist
+      result.push(currentElement)
+    } else if (ascii >= 97 && ascii <= 122) {
+      // Hier wird das gleiche gemacht einfach mit Kleinbuchstaben
+      result.push(currentElement)
+    } else if (ascii === 32) {
+      // Hier wird das gleiche gemacht mit einem Leerzeichen
+      result.push(currentElement)
     }
   }
-  return count + 1 // Weil wir alle Wörter in einem Text zählen wollen, müssen wir beim Count noch um 1 erhöhen, weil es immer ein Leerzeichen weniger hat als wörter
+  // Für den Fall, dass es noch mehrere Leerzeichen nebeneinander gibt, werden diese gefiltert
+
+  const result2 = []
+
+  for (let i = 0; i < result.length; i++) {
+    const currentElement = result[i]
+    const nextElement = result[i + 1]
+
+    if (currentElement === " " && nextElement === " ") {
+      // Hier prüft es, ob zwei Leerzeichen nebeneinander stehen
+    } else {
+      result2.push(currentElement)
+    }
+  }
+  // Hier werden nun die Leerzeichen gezählt
+
+  let count = 0
+  for (let i = 0; i < result2.length; i++) {
+    const currentElement = result2[i]
+    if (currentElement === " ") {
+      count++
+    }
+  }
+  // Da es ein Wort mehr ist, muss der Count um eins erhöht werden
+  return count + 1
 }
 linkupExerciseHandler("[data-click=aufgabe04]", aufgabe04)
 
