@@ -374,21 +374,50 @@ linkupExerciseHandler("[data-click=aufgabe16]", aufgabe16)
 
 export function aufgabe17(args) {
   const input = args
-  const result = []
-
-  // erstelle eine Variable für eine Liste
-  let list = []
+  const totalList = []
+  const currentlist = [] // Hier werden die Zeichen aus der Eingabe geseichert, die bearbeitet werden sollen.
 
   for (let i = 0; i < input.length; i++) {
-    // Lies die eingabe als Liste ein
-    list = input.split(",")
-    // Trenne die Einträge in der Liste mit einem Komma
-    list = list.join(",").split(",")
+    const currentElement = input[i]
+
+    //Wenn jetzt ein Leerzeichen kommt, dann wird alles was bereits vorhanden ist in die totalList geschrieben.
+
+    if (currentElement === " ") {
+      totalList.push(currentlist.join(""))
+      currentlist.length = 0
+    } else {
+      currentlist.push(currentElement)
+    }
   }
-  // Gib die Liste zuruck
-  return list[list.join(",")]
+  //Alles was noch bis zum Ende gelesen wurde, wird in die Liste geschrieben
+  totalList.push(currentlist.join(""))
+  return totalList
 }
-linkupExerciseHandler("[data-click=aufgabe17]", aufgabe17)
+
+linkupExerciseHandler('[data-click="aufgabe17"]', aufgabe17)
+
+export function aufgabe18(args) {
+  const input = args
+
+  // Aufgabe 17 wird hier verwendet um eine Liste zu bekommen.
+  const nameAge = aufgabe17(input)
+
+  // Es wird hier unsere Aufgabenliste generiert.
+  const result = []
+
+  // Hier werden ganze Worte in die Liste geschrieben, das ist auch möglich
+  result.push("Sie heissen")
+
+  // Die Liste wird so zusammengesetzt, dass der Name und das Alter an der richtigen Stelle eingefügt werden.
+  result.push(nameAge[0])
+  result.push("und sind")
+  result.push(nameAge[1])
+  result.push("Jahre alt")
+
+  //Das Resultat wird wie immer als Text zurückgegeben
+  return result.join(" ")
+}
+linkupExerciseHandler('[data-click="aufgabe18"]', aufgabe18)
 
 export function aufgabe19(args) {
   const input = args
