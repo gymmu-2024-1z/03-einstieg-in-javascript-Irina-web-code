@@ -518,6 +518,37 @@ export function Sortierverfahren1(args) {
 
 linkupExerciseHandler("[data-click=Sortierverfahren1]", Sortierverfahren1)
 
+export function Sortierverfahren2(args) {
+  const input = args.split("")
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+    // Hier schauen wir, welches das kleinste Element in der Eingabe ist
+    let min = input[i]
+    let minIndex = i
+
+    for (let j = i + 1; j < input.length; j++) {
+      if (input[j] < min) {
+        min = input[j]
+        minIndex = j
+      }
+    }
+    const tmp = input[i]
+    input[i] = min
+    input[minIndex] = tmp
+    // Das kleinste Element wird mit dem ersten Element vertauscht
+    for (let k = i + 1; k < input.length; k++) {
+      if (input[k] < min) {
+        min = input[k]
+        minIndex = k
+      }
+    }
+    result.push(input[i])
+  }
+  return result.join("")
+}
+
+linkupExerciseHandler("[data-click=Sortierverfahren2]", Sortierverfahren2)
 export function Eisen(args) {
   const input = args
   const result = []
